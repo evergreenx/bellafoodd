@@ -1,6 +1,6 @@
 import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
-import { ViewStyle, View, Image, TextStyle, Button, TouchableOpacity } from "react-native"
+import { ViewStyle, View, Image, TextStyle, TouchableOpacity } from "react-native"
 import { AppStackScreenProps } from "../navigators"
 import { Screen, Text } from "../components"
 import { colors, spacing } from "../theme"
@@ -44,20 +44,40 @@ export const SignInScreen: FC<SignInScreenProps> = observer(function SignInScree
         </View>
 
         <View style={$tabContainer}>
-          <TouchableOpacity onPress={() => setActiveTab(1)}>
+          <TouchableOpacity
+            // eslint-disable-next-line react-native/no-inline-styles
+            style={{
+              borderBottomWidth: 10,
+              paddingHorizontal: 30,
+              paddingBottom: spacing.medium,
+
+              borderBottomWidth: tab === 1 ? 2 : 0,
+              borderColor: colors.palette.brandColor,
+            }}
+            // style={{borderBottomWidth: 4, borderColor: colors.palette.brandColor}}
+
+            onPress={() => setActiveTab(1)}
+          >
             <Text style={$tabText}>Login</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => setActiveTab(2)}>
+          <TouchableOpacity
+            style={{
+              paddingHorizontal: spacing.large,
+              paddingBottom: spacing.medium,
+
+              borderBottomWidth: 10,
+              borderBottomWidth: tab === 2 ? 2 : 0,
+              borderColor: colors.palette.brandColor,
+            }}
+            onPress={() => setActiveTab(2)}
+          >
             <Text style={$tabText}>signup</Text>
           </TouchableOpacity>
         </View>
       </View>
 
-      <View style={$formContainer}>
-        {tab === 1 ? <Text>Tab 1</Text> : <Text>Tab 2</Text>}
-  
-      </View>
+      <View style={$formContainer}>{tab === 1 ? <Text>Tab 1</Text> : <Text>Tab 2</Text>}</View>
     </Screen>
   )
 })
@@ -73,7 +93,7 @@ const $screenContentContainer: ViewStyle = {
 }
 
 const $topContainer: ViewStyle = {
-  padding: spacing.large,
+  // padding: spacing.large,
   justifyContent: "space-around",
   // alignItems: "center",
   // flexDirection: "column",
