@@ -5,6 +5,11 @@ import React from "react"
 import { registerRootComponent } from "expo"
 import * as SplashScreen from "expo-splash-screen"
 
+
+if(__DEV__) {
+  import("./ReactotronConfig")
+}
+
 SplashScreen.preventAutoHideAsync()
 
 function IgniteApp() {

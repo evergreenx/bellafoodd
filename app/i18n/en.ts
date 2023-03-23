@@ -12,6 +12,13 @@ const en = {
     exciting: "(ohh, this is exciting!)",
     letsGo: "Let's go!", // @demo remove-current-line
   },
+
+  introScreen: {
+
+    title: "Food for  Everyone",
+    button : "Get Started",
+
+  } ,
   errorScreen: {
     title: "Something went wrong!",
     friendlySubtitle:

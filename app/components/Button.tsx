@@ -124,24 +124,25 @@ export function Button(props: ButtonProps) {
 }
 
 const $baseViewStyle: ViewStyle = {
-  minHeight: 56,
-  borderRadius: 4,
+  minHeight: 70,
+  borderRadius: 30,
   justifyContent: "center",
   alignItems: "center",
   flexDirection: "row",
   paddingVertical: spacing.small,
-  paddingHorizontal: spacing.small,
+  paddingHorizontal: spacing.micro,
   overflow: "hidden",
 }
 
 const $baseTextStyle: TextStyle = {
-  fontSize: 16,
+  fontSize: 17,
   lineHeight: 20,
   fontFamily: typography.primary.medium,
   textAlign: "center",
   flexShrink: 1,
   flexGrow: 0,
   zIndex: 2,
+  fontWeight: "600",
 }
 
 const $rightAccessoryStyle: ViewStyle = { marginStart: spacing.extraSmall, zIndex: 1 }
@@ -153,32 +154,31 @@ const $viewPresets = {
     {
       borderWidth: 1,
       borderColor: colors.palette.neutral400,
-      backgroundColor: colors.palette.neutral100,
+      backgroundColor: colors.palette.brandColor,
     },
   ] as StyleProp<ViewStyle>,
 
   filled: [$baseViewStyle, { backgroundColor: colors.palette.neutral300 }] as StyleProp<ViewStyle>,
-
-  reversed: [
+  intro: [
     $baseViewStyle,
-    { backgroundColor: colors.palette.neutral800 },
+    { backgroundColor: colors.palette.neutral100, color: colors.palette.brandColor },
   ] as StyleProp<ViewStyle>,
 }
 
 const $textPresets: Record<Presets, StyleProp<TextStyle>> = {
   default: $baseTextStyle,
   filled: $baseTextStyle,
-  reversed: [$baseTextStyle, { color: colors.palette.neutral100 }],
+  intro: [$baseTextStyle, { color: colors.palette.brandColor }],
 }
 
 const $pressedViewPresets: Record<Presets, StyleProp<ViewStyle>> = {
   default: { backgroundColor: colors.palette.neutral200 },
   filled: { backgroundColor: colors.palette.neutral400 },
-  reversed: { backgroundColor: colors.palette.neutral700 },
+  intro: { backgroundColor: colors.palette.neutral200 },
 }
 
 const $pressedTextPresets: Record<Presets, StyleProp<TextStyle>> = {
   default: { opacity: 0.9 },
   filled: { opacity: 0.9 },
-  reversed: { opacity: 0.9 },
+  intro: { opacity: 0.9 },
 }

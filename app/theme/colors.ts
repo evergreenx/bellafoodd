@@ -1,6 +1,9 @@
 // TODO: write documentation for colors and palette in own markdown file and add links from here
 
 const palette = {
+
+
+  brandColor: '#FA4A0C',
   neutral100: "#FFFFFF",
   neutral200: "#F4F2F1",
   neutral300: "#D7CEC9",
@@ -44,6 +47,8 @@ export const colors = {
    * semantic names as much as possible.
    */
   palette,
+  
+  introBG : "#FF4B3A",
   /**
    * A helper for making something see-thru.
    */

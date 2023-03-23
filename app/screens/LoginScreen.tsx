@@ -32,6 +32,10 @@ export const LoginScreen: FC<LoginScreenProps> = observer(function LoginScreen(_
     setIsSubmitted(true)
     setAttemptsCount(attemptsCount + 1)
 
+    // navigator.navigate("home", undefined, { replace: true })
+
+
+    // routerStore.navigate("home", undefined, { replace: true })
     if (validationError) return
 
     // Make a request to your server to get an authentication token.
