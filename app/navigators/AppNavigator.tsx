@@ -20,7 +20,9 @@ import { useStores } from "../models" // @demo remove-current-line
 import {
   LoginScreen, // @demo remove-current-line
   WelcomeScreen,
-  IntroScreen, // @demo remove-current-line
+  IntroScreen, 
+  SignInScreen,
+  // @demo remove-current-line
 } from "../screens"
 import { DemoNavigator, DemoTabParamList } from "./DemoNavigator" // @demo remove-current-line
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
@@ -42,6 +44,7 @@ export type AppStackParamList = {
   Welcome: undefined
   Login: undefined // @demo remove-current-line
   Intro: undefined // @demo remove-current-line
+  SignIn: undefined // @demo remove-current-line
   Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
   // 🔥 Your screens go here
 }
@@ -84,6 +87,7 @@ const AppStack = observer(function AppStack() {
         <>
           <Stack.Screen name="Intro" component={IntroScreen} />
           <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="SignIn" component={SignInScreen} />
         </>
       )}
       {/* @demo remove-block-end */}

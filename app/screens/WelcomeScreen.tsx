@@ -21,7 +21,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
   _props, // @demo remove-current-line
 ) {
   // @demo remove-block-start
-  const { navigation } = _props
+  // const { navigation } = _props
   const {
     authenticationStore: { logout },
   } = useStores()

@@ -24,24 +24,20 @@ const introImage = require("../../assets/images/intro.png")
 export function IntroScreen({ navigation }) {
   const handleNavigation = () => {
     console.log("handleNavigation")
-    navigation.navigate("Login")
+    navigation.navigate("SignIn")
   }
   return (
     <Screen
       preset="auto"
       contentContainerStyle={$screenContentContainer}
-      safeAreaEdges={["top", "bottom"]}
+      safeAreaEdges={["top", "left"]}
       backgroundColor={colors.introBG}
     >
-
-        
-     <View style={$topView}>
-
+      <View style={$topView}>
         <Image source={require("../../assets/images/logox.png")} style={logo} />
 
-     <Text testID="intro-heading" tx="introScreen.title" preset="heading" style={$title} />
-
-        </View>
+        <Text testID="intro-heading" tx="introScreen.title" preset="heading" style={$title} />
+      </View>
 
       <Image
         source={require("../../assets/images/intro.png")}
@@ -51,9 +47,6 @@ export function IntroScreen({ navigation }) {
       />
 
       <View style={$ButtonContainer}>
-
-  
-
         <Button
           preset="intro"
           tx="introScreen.button"
@@ -69,47 +62,37 @@ export function IntroScreen({ navigation }) {
 const $screenContentContainer: ViewStyle = {
   justifyContent: "space-between",
   flex: 1,
-
-  
 }
 
 const logo: ImageStyle = {
-
-
-    marginTop: 10,
-    marginBottom: 20,
+  marginTop: 10,
+  marginBottom: 20,
 }
-
 
 const $topView: ViewStyle = {
-
-    paddingVertical: spacing.huge,
-    paddingHorizontal: spacing.large,
-
-  
+  paddingVertical: spacing.huge,
+  paddingHorizontal: spacing.large,
 }
-
 
 const $title: TextStyle = {
   color: colors.palette.neutral100,
   fontSize: 65,
-    fontWeight: "900",
-    lineHeight: 66,
-   alignSelf: "stretch",
+  fontWeight: "900",
+  lineHeight: 66,
+  alignSelf: "stretch",
 }
 
 const $introImage: ImageStyle = {
-    position: "absolute",
-    top: 200,
-    left: 0,
-    right: 0,
-    bottom: 0,
-marginTop: 100,
-marginBottom: 0,
+  position: "absolute",
+  top: 200,
+  left: 0,
+  right: 0,
+  bottom: 0,
+  marginTop: 100,
+  marginBottom: 0,
 }
 
 const $ButtonContainer: ViewStyle = {
   paddingHorizontal: spacing.large,
   paddingBottom: spacing.huge,
 }
-

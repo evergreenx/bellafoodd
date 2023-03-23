@@ -4,6 +4,7 @@ const palette = {
 
 
   brandColor: '#FA4A0C',
+  brandColorBg : '#F2F2F2',
   neutral100: "#FFFFFF",
   neutral200: "#F4F2F1",
   neutral300: "#D7CEC9",
