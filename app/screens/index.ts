@@ -5,6 +5,7 @@ export * from "./IntroScreen"
 export * from "./SignInScreen"
 export * from "./DemoCommunityScreen"
 export * from "./DemoDebugScreen"
+export * from "./HomeScreen"
 export * from "./DemoShowroomScreen/DemoShowroomScreen"
 // @demo remove-block-end
 export * from "./ErrorScreen/ErrorBoundary"

@@ -14,11 +14,31 @@ const en = {
   },
 
   introScreen: {
-
     title: "Food for  Everyone",
-    button : "Get Started",
+    button: "Get Started",
+  },
 
-  } ,
+  signInScreen: {
+    LoginTab: {
+      title: "Login",
+    },
+
+    SignUpTab: {
+      title: "Sign Up",
+    },
+  },
+
+  homeScreen: {
+    title: "Delicious food for you",
+    tabHeader : {
+      food: "Food",
+      drinks: "Drinksx",
+      Snacks: "Snacks",
+      Sauce : "Sauce",
+    },
+
+    logout : "Logout",
+  },
   errorScreen: {
     title: "Something went wrong!",
     friendlySubtitle:
