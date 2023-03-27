@@ -51,6 +51,8 @@ export const colors = {
   palette,
   
   introBG : "#FF4B3A",
+
+  tabIconInactive : '#ADADAF' ,
   /**
    * A helper for making something see-thru.
    */

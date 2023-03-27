@@ -33,7 +33,6 @@ export const SignInScreen: FC<SignInScreenProps> = observer(function SignInScree
     setTab(tab)
   }
   const gotoNext = () => {
-    // console.log("hello")
     setAuthToken(String(Date.now()))
   }
   const renderTab = () => {
@@ -51,6 +50,9 @@ export const SignInScreen: FC<SignInScreenProps> = observer(function SignInScree
 
       case 2:
         return <Text>Sign Up</Text>
+
+      default:
+        return null
     }
   }
   return (

@@ -1,11 +1,11 @@
 import React, { FC, useState, useCallback } from "react"
 import { observer } from "mobx-react-lite"
 import { ViewStyle, TextStyle, View, TouchableOpacity } from "react-native"
-import { AppStackScreenProps } from "../navigators"
-import { Screen, Text, Button } from "../components"
-import { colors, spacing } from "../theme"
+import { Screen, Text, Button } from "../../components"
+import { colors, spacing } from "../../theme"
 import { ScrollView } from "react-native-gesture-handler"
-import { useStores } from "../models" // @demo remove-current-line
+import { useStores } from "../../models" // @demo remove-current-line
+import { TabScreenProps } from "../../navigators/TabNavigator"
 
 const DATA = [
   {
@@ -27,9 +27,7 @@ const DATA = [
   },
 ]
 
-interface HomeScreenProps extends AppStackScreenProps<"Home"> {}
-
-export const HomeScreen: FC<HomeScreenProps> = observer(function HomeScreen() {
+export const HomeScreen: FC<TabScreenProps<"Home">> = observer(function HomeScreen() {
   const [tab, setTab] = useState(1)
   const {
     authenticationStore: { logout },

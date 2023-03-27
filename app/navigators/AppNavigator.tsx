@@ -27,6 +27,7 @@ import {
 } from "../screens"
 import { DemoNavigator, DemoTabParamList } from "./DemoNavigator" // @demo remove-current-line
 import { navigationRef, useBackButtonHandler } from "./navigationUtilities"
+import { TabNavigator , TabParamsList } from "./TabNavigator"
 
 /**
  * This type allows TypeScript to know what routes are defined in this navigator
@@ -45,9 +46,9 @@ export type AppStackParamList = {
   Welcome: undefined
   Login: undefined // @demo remove-current-line
   Intro: undefined // @demo remove-current-line
-  SignIn: undefined // @demo remove-current-line
-  Home: undefined // @demo remove-current-line
+  SignIn: undefined // @demo remove-current-line// @demo remove-current-line
   Demo: NavigatorScreenParams<DemoTabParamList> // @demo remove-current-line
+  Tab: NavigatorScreenParams<TabParamsList> // @demo remove-current-line
   // 🔥 Your screens go here
 }
 
@@ -78,17 +79,18 @@ const AppStack = observer(function AppStack() {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName={isAuthenticated ? "Home" : "SignIn"} // @demo remove-current-line
+      initialRouteName={isAuthenticated ? "Tab" : "Intro"} // @demo remove-current-line
     >
       {/* @demo remove-block-start */}
       {isAuthenticated ? (
         <>
           {/* @demo remove-block-end */}
-          <Stack.Screen name="Home" component={HomeScreen} />
+          {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
 
           <Stack.Screen name="Welcome" component={WelcomeScreen} />
           {/* @demo remove-block-start */}
           <Stack.Screen name="Demo" component={DemoNavigator} />
+          <Stack.Screen name="Tab" component={TabNavigator} />
         </>
       ) : (
         <>
