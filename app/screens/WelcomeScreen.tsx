@@ -59,7 +59,7 @@ export const WelcomeScreen: FC<WelcomeScreenProps> = observer(function WelcomeSc
         {/* @demo remove-block-start */}
         <Button
           testID="next-screen-button"
-          preset="reversed"
+          preset="filled"
           tx="welcomeScreen.letsGo"
           onPress={goNext}
         />

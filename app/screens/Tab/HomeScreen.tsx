@@ -6,6 +6,7 @@ import { colors, spacing } from "../../theme"
 import { ScrollView } from "react-native-gesture-handler"
 import { useStores } from "../../models" // @demo remove-current-line
 import { TabScreenProps } from "../../navigators/TabNavigator"
+import { SearchBox } from "../../components/SearchBox"
 
 const DATA = [
   {
@@ -94,6 +95,10 @@ export const HomeScreen: FC<TabScreenProps<"Home">> = observer(function HomeScre
     >
       <Text tx="homeScreen.title" style={$homeHeadingText} preset="heading" />
 
+      <View>
+        <SearchBox />
+      </View>
+
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {DATA.map((item) => {
           return renderItem({ item })
@@ -119,7 +124,6 @@ const $root: ViewStyle = {
   backgroundColor: colors.palette.brandColorBg,
 }
 const $screenContentContainer: ViewStyle = {
-  backgroundColor: colors.palette.brandColorBg,
   paddingHorizontal: spacing.large,
   paddingVertical: spacing.large,
 }
