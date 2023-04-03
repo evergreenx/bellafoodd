@@ -1,6 +1,6 @@
 # Project Title
+A food delivery mobile app
 
-A food mobile app
 
 ## Screenshots
 
@@ -8,11 +8,8 @@ A food mobile app
 
 ## Tech Stack
 
-Expo, Typescript, Mobx for state management
+ Expo, Typescript, Mobx for state management
 
-# Project Title
-
-A food mobile app
 
 ## Authors
 
