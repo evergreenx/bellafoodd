@@ -3,28 +3,8 @@ import React from "react"
 import { colors, spacing } from "../theme"
 import { FlashList } from "@shopify/flash-list"
 
-const testData = [
-  {
-    id: 1,
-    title: "CustomCard ok test 1234",
-    image:
-      "https://images.immediate.co.uk/production/volatile/sites/30/2015/02/Next-level-paella-f11ee26.jpg",
-  },
-  {
-    id: 2,
-    title: "Drinks",
-    image:
-    "https://media.cnn.com/api/v1/images/stellar/prod/160929101749-essential-spanish-dish-paella-phaidon.jpg?q=w_1900,h_1069,x_0,y_0,c_fill/w_1280"
-  },
-  {
-    id: 3,
-    title: "Snacks",
-    image:
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8z5NcxowLUZH5zFDtx7ATvzGsLScfe_KsoA&usqp=CAU"
-  },
-]
-
-export const CustomCard = () => {
+export const CustomCard = (data) => {
+  console.log("data", data.data)
   const renderCards = ({ item }) => {
     return (
       <View key={item.id} style={$cardContainer}>
@@ -48,21 +28,20 @@ export const CustomCard = () => {
           }}
         />
         <Text style={$foodTitle}>{item.title}</Text>
+        <Text style={$priceText}>$ {item.price}</Text>
       </View>
     )
   }
   return (
     <View style={$container}>
       <FlashList
-        data={testData}
+        data={data.data}
         horizontal={true}
         renderItem={renderCards}
         estimatedItemSize={200}
         showsHorizontalScrollIndicator={false}
         // hide scroll bar
       />
-
-      <Text>CustomCard</Text>
     </View>
   )
 }
@@ -72,7 +51,7 @@ const $cardContainer: ViewStyle = {
   height: 270,
   width: 220,
   borderRadius: 30,
-  shadowColor: "#000",
+  shadowColor: "#3939391A",
   shadowOffset: {
     width: 0,
     height: 5,
@@ -102,4 +81,11 @@ const $foodTitle: TextStyle = {
 
 const $container: ViewStyle = {
   // marginHorizontal: spacing.large,
+  marginVertical: spacing.large,
+}
+const $priceText: TextStyle = {
+  color: colors.palette.brandColor,
+  fontWeight: "700",
+  lineHeight: 20,
+  fontSize: 17,
 }
