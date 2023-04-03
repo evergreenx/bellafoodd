@@ -1,12 +1,11 @@
 import React, { FC, useState, useCallback } from "react"
 import { observer } from "mobx-react-lite"
 import { ViewStyle, TextStyle, View, TouchableOpacity } from "react-native"
-import { Screen, Text, Button } from "../../components"
+import { Screen, Text, Button, SearchBox, CustomCard } from "../../components"
 import { colors, spacing } from "../../theme"
 import { ScrollView } from "react-native-gesture-handler"
 import { useStores } from "../../models" // @demo remove-current-line
 import { TabScreenProps } from "../../navigators/TabNavigator"
-import { SearchBox } from "../../components/SearchBox"
 
 const DATA = [
   {
@@ -58,6 +57,7 @@ export const HomeScreen: FC<TabScreenProps<"Home">> = observer(function HomeScre
   const renderContent = () => {
     switch (tab) {
       case 1:
+
         return (
           <View>
             <Text>Food</Text>
@@ -95,7 +95,7 @@ export const HomeScreen: FC<TabScreenProps<"Home">> = observer(function HomeScre
     >
       <Text tx="homeScreen.title" style={$homeHeadingText} preset="heading" />
 
-      <View>
+      <View style={$searchboxContainer}>
         <SearchBox />
       </View>
 
@@ -106,6 +106,8 @@ export const HomeScreen: FC<TabScreenProps<"Home">> = observer(function HomeScre
       </ScrollView>
 
       {renderContent()}
+
+      <CustomCard />
 
       <Button
         preset="filled"
@@ -124,15 +126,15 @@ const $root: ViewStyle = {
   backgroundColor: colors.palette.brandColorBg,
 }
 const $screenContentContainer: ViewStyle = {
-  paddingHorizontal: spacing.large,
-  paddingVertical: spacing.large,
+  // paddingHorizontal: spacing.large,
+  // paddingVertical: spacing.large,
 }
 
 const $homeTabButtonslider: TextStyle = {
   color: colors.palette.homeTabText,
   fontWeight: "400",
   fontSize: 17,
-  paddingHorizontal: spacing.medium,
+  paddingHorizontal: spacing.large,
   paddingVertical: spacing.large,
   paddingBottom: spacing.medium,
   marginLeft: spacing.large,
@@ -142,4 +144,11 @@ const $homeHeadingText: TextStyle = {
   fontSize: 34,
   fontWeight: "bold",
   width: "50%",
+  paddingHorizontal: spacing.medium,
+  paddingVertical: spacing.medium,
+}
+
+const $searchboxContainer: ViewStyle = {
+  paddingHorizontal: spacing.medium,
+  paddingVertical: spacing.medium,
 }

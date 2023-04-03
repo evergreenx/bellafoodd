@@ -13,21 +13,19 @@ export function SearchBox() {
         <Icon icon="search" />
       </View>
 
-      <TextInput
-
-       placeholder="Searcvvvvvvh" style={$searchInput} />
+      <TextInput placeholder="Searcvvvvvvh" style={$searchInput} />
     </View>
   )
 }
 
-const $searchContainer : ViewStyle = {
+const $searchContainer: ViewStyle = {
   flexDirection: "row",
   alignItems: "center",
   backgroundColor: colors.palette.searchbarbg,
   borderRadius: spacing.huge,
-  
-    paddingHorizontal: 30,
-    paddingVertical: spacing.small,
+
+  paddingHorizontal: 30,
+  paddingVertical: spacing.tiny,
   width: "100%",
 }
 
